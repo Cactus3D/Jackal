@@ -10,6 +10,11 @@ public class Main {
         this.content = content;
     }
 
+    public Main(){
+        id = 0;
+        content = "loop";
+    }
+
     public long getId() {
         return id;
     }
