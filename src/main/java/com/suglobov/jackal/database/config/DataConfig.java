@@ -1,4 +1,4 @@
-package com.suglobov.jackal.config;
+package com.suglobov.jackal.database.config;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +22,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.suglobov.jackal.database")
-@PropertySource("classpath:app.properties")
+@PropertySource("classpath:application.properties")
 @EnableJpaRepositories("com.suglobov.jackal.database.repository")
 public class DataConfig {
 

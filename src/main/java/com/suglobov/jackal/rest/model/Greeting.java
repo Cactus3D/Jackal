@@ -1,18 +1,13 @@
 package com.suglobov.jackal.rest.model;
 
-public class Main {
+public class Greeting {
 
     private final long id;
     private final String content;
 
-    public Main(long id, String content) {
+    public Greeting(long id, String content) {
         this.id = id;
         this.content = content;
-    }
-
-    public Main(){
-        id = 0;
-        content = "loop";
     }
 
     public long getId() {
