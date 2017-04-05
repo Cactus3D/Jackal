@@ -16,9 +16,6 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by cactu on 31.03.2017.
- */
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.suglobov.jackal.database")
@@ -26,14 +23,14 @@ import java.util.Properties;
 @EnableJpaRepositories("com.suglobov.jackal.database.repository")
 public class DataConfig {
 
-    public static final String PROP_DATABASE_DRIVER = "db.driver";
-    public static final String PROP_DATABASE_PASSWORD = "db.password";
-    public static final String PROP_DATABASE_URL = "db.url";
-    public static final String PROP_DATABASE_USERNAME = "db.username";
-    public static final String PROP_HIBERNATE_DIALECT = "db.hibernate.dialect";
-    public static final String PROP_HIBERNATE_SHOW_SQL = "db.hibernate.show_sql";
-    public static final String PROP_ENTITYMANAGER_PACKAGES_TO_SCAN = "db.entitymanager.packages.to.scan";
-    public static final String PROP_HIBERNATE_HBM2DDL_AUTO = "db.hibernate.hbm2ddl.auto";
+    private static final String PROP_DATABASE_DRIVER = "db.driver";
+    private static final String PROP_DATABASE_PASSWORD = "db.password";
+    private static final String PROP_DATABASE_URL = "db.url";
+    private static final String PROP_DATABASE_USERNAME = "db.username";
+    private static final String PROP_HIBERNATE_DIALECT = "db.hibernate.dialect";
+    private static final String PROP_HIBERNATE_SHOW_SQL = "db.hibernate.show_sql";
+    private static final String PROP_ENTITYMANAGER_PACKAGES_TO_SCAN = "db.entitymanager.packages.to.scan";
+    private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "db.hibernate.hbm2ddl.auto";
 
     @Resource
     private Environment env;
