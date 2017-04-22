@@ -9,7 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-04-04.23:09:17.482</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-04-14.20:46:56.363</IntrospectionTimestamp>
+      <IntrospectionStateNumber>561</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -28,5 +29,111 @@
     <schema id="8" parent="2" name="information_schema">
       <ObjectId>12113</ObjectId>
     </schema>
+    <sequence id="9" parent="3" name="groups_id_seq">
+      <ObjectId>16402</ObjectId>
+      <StateNumber>547</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="10" parent="3" name="students_id_seq">
+      <ObjectId>16393</ObjectId>
+      <StateNumber>544</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="11" parent="3" name="groups">
+      <ObjectId>16404</ObjectId>
+      <StateNumber>561</StateNumber>
+    </table>
+    <table id="12" parent="3" name="students">
+      <ObjectId>16395</ObjectId>
+      <StateNumber>561</StateNumber>
+    </table>
+    <column id="13" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>547</StateNumber>
+      <SequenceName>groups_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;groups_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="14" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>547</StateNumber>
+    </column>
+    <index id="15" parent="11" name="groups_id_uindex">
+      <ObjectId>16410</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="16" parent="11" name="groups_pkey">
+      <ObjectId>16408</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="17" parent="11" name="groups_pkey">
+      <ObjectId>16409</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>groups_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>544</StateNumber>
+      <SequenceName>students_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;students_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="19" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>544</StateNumber>
+    </column>
+    <column id="20" parent="12" name="patronymic">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>546</StateNumber>
+    </column>
+    <column id="21" parent="12" name="surname">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>544</StateNumber>
+    </column>
+    <column id="22" parent="12" name="group_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>544</StateNumber>
+    </column>
+    <index id="23" parent="12" name="students_id_uindex">
+      <ObjectId>16401</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="24" parent="12" name="students_pkey">
+      <ObjectId>16399</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="12" name="students_pkey">
+      <ObjectId>16400</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>students_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="12" name="students_groups_id_fk">
+      <ObjectId>16421</ObjectId>
+      <ColNames>group_id</ColNames>
+      <RefTableName>groups</RefTableName>
+      <RefKeyName>groups_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
   </database-model>
 </dataSource>

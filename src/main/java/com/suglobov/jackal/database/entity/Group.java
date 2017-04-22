@@ -1,6 +1,7 @@
 package com.suglobov.jackal.database.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by cactu on 31.03.2017.
@@ -15,6 +16,9 @@ public class Group {
 
     @Column(name = "name")
     private String name;
+
+    /*@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Student> students;*/
 
     public Group() {
     }
@@ -34,6 +38,14 @@ public class Group {
     public void setName(String name) {
         this.name = name;
     }
+
+//    public Set<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(Set<Student> students) {
+//        this.students = students;
+//    }
 
     @Override
     public String toString() {
