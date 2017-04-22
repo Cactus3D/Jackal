@@ -32,13 +32,13 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     // Позволяет видеть все ресурсы в папке pages, такие как картинки, стили и т.п.
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("resources/pages/**").addResourceLocations("resources/pages/");
+        registry.addResourceHandler("resources/**").addResourceLocations("resources/");
     }
 
     @Bean
     public InternalResourceViewResolver setupViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("resources/pages/");
+        resolver.setPrefix("/pages/");
         resolver.setSuffix(".jsp");
         resolver.setViewClass(JstlView.class);
 
