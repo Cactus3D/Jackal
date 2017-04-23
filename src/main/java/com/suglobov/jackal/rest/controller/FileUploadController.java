@@ -1,5 +1,7 @@
 package com.suglobov.jackal.rest.controller;
 
+import com.suglobov.jackal.justice.util.Candidate;
+import com.suglobov.jackal.justice.util.QueueManager;
 import com.suglobov.jackal.salvage.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,13 +33,24 @@ public class FileUploadController {
 
     @PostMapping("file/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
+                                   @RequestParam("taskID") int task,
                                    RedirectAttributes redirectAttributes) {
-
+        int newID;
+        //Добавление попытки в базу, получение newID
+        newID = counter.intValue();
+        Candidate candidate = new Candidate(newID, task);
+        //Сохранение файлов по полученному newID
         storageService.store(file, counter.intValue());
-        redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded " + file.getOriginalFilename() + "!");
+        //Добавление в очередь на тестирование
+        QueueManager.addToQueue(candidate);
+        redirectAttributes.addFlashAttribute("id", newID);
+        return "redirect:/file/";
+    }
 
-        return "redirect:/";
+    @GetMapping("file/")
+    public String shwoUploadStatus(@RequestParam("id") int id,
+                                   Model model) {
+        return "uploadForm";
     }
 
 }
