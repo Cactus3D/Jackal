@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
-@Controller
+@RestController
 public class FileUploadController {
 
     private final UploadService storageService;
@@ -47,7 +47,7 @@ public class FileUploadController {
         return "redirect:/file/";
     }
 
-    @GetMapping("file/")
+    @GetMapping("file/lol")
     public String shwoUploadStatus(@RequestParam("id") int id,
                                    Model model) {
         return "uploadForm";
