@@ -1,7 +1,14 @@
 package com.suglobov.jackal.justice.util;
 
 /**
- * Created by Cactus3D on 23.04.2017.
+ * <p>Текст сообщения о прохождении одного этапа.</p>
+ * <li>
+ * <ul>status - состояние этапа (завершён, ошибка, предупреждение, в процессе)</ul>
+ * <ul>title - название этапа</ul>
+ * <ul>message - сообщение о результате выполнения</ul>
+ * </li>
+ *
+ * @author Cactus3D
  */
 public class Message {
     private Status status;
@@ -42,6 +49,28 @@ public class Message {
 
     public void setMessage(String message) {
         this.message = message;
+        if (message.startsWith("COMPLETE"))
+            status = Status.COMPLETE;
+        if (message.startsWith("WARNING"))
+            status = Status.WARNING;
+        if (message.startsWith("ERROR"))
+            status = Status.ERROR;
+    }
+
+    public boolean isCritical() {
+        return status == Status.ERROR;
+    }
+
+    public void setStatusOK() {
+        status = Status.COMPLETE;
+    }
+
+    public void setStatusWarning() {
+        status = Status.WARNING;
+    }
+
+    public void setStatusError() {
+        status = Status.ERROR;
     }
 
     @Override

@@ -14,12 +14,12 @@ public class ShowFullBase {
     private String groups = "";
 
     public ShowFullBase(List<Student> students, List<Group> groups) {
-        for (Student stud:
-             students) {
+        for (Student stud :
+                students) {
             Group group = stud.getGroup();
             this.students += stud.toString() + " in " + group.toString();
         }
-        for (Group group:
+        for (Group group :
                 groups) {
             this.groups += group.toString() + " ";
         }

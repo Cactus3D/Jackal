@@ -1,7 +1,6 @@
 package com.suglobov.jackal.database.entity;
 
 import javax.persistence.*;
-import java.util.Set;
 
 /**
  * Created by cactu on 31.03.2017.

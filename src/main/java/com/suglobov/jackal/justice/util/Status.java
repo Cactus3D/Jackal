@@ -1,7 +1,7 @@
 package com.suglobov.jackal.justice.util;
 
 /**
- * Created by Cactus3D on 23.04.2017.
+ * @author Cactus3D
  */
 public enum Status {
     COMPLETE,

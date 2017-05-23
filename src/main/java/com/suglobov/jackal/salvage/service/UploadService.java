@@ -4,5 +4,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface UploadService {
     void init();
+
     void store(MultipartFile file, int id);
 }

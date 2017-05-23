@@ -1,10 +1,10 @@
 package com.suglobov.jackal.justice.service;
 
-import java.nio.file.Path;
+import java.io.File;
 
 /**
  * Created by Cactus3D on 07.04.2017.
  */
 public interface TestService {
-    public String test(Path path);
+    String test(File target, File task);
 }

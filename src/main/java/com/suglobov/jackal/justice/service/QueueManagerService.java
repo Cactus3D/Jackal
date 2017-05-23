@@ -1,11 +1,14 @@
 package com.suglobov.jackal.justice.service;
 
 /**
- * Created by Cactus3D on 23.04.2017.
+ * @author Cactus3D
  */
 public interface QueueManagerService {
-    int getNext();
-    int[] getAll();
+    CandidateService getNext();
+
+    CandidateService[] getAll();
+
     int getCount();
-    void addToQueue(int id);
+
+    void addToQueue(CandidateService candidate);
 }

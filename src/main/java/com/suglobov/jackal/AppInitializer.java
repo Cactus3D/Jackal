@@ -1,6 +1,7 @@
 package com.suglobov.jackal;
 
 import com.suglobov.jackal.database.config.DataConfig;
+import com.suglobov.jackal.justice.config.JusticeConfig;
 import com.suglobov.jackal.rest.config.WebConfig;
 import com.suglobov.jackal.salvage.config.SalvageConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -14,7 +15,8 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{
                 DataConfig.class,
-                SalvageConfig.class
+                SalvageConfig.class,
+                JusticeConfig.class
         };
     }
 
