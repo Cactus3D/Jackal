@@ -33,6 +33,18 @@ public class JusticeConfig {
     }
 
     @Bean
+    public JusticeThread justiceThread() {
+        if(thread == null){
+            thread = new JusticeThread(
+                    queueManagerService(),
+                    queueManagerService(),
+                    queueManagerService());
+            thread.start();
+        }
+        return thread;
+    }
+
+    @Bean
     @Primary
     public QueueManagerService queueManagerService() {
         return new QueueManagerServiceImpl();
