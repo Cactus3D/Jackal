@@ -31,6 +31,7 @@ public class DataConfig {
     private static final String PROP_HIBERNATE_SHOW_SQL = "db.hibernate.show_sql";
     private static final String PROP_ENTITYMANAGER_PACKAGES_TO_SCAN = "db.entitymanager.packages.to.scan";
     private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "db.hibernate.hbm2ddl.auto";
+    private static final String PROP_HIBERNATE_DDL_AUTO = "spring.jpa.hibernate.ddl-auto";
 
     @Resource
     private Environment env;
@@ -72,7 +73,7 @@ public class DataConfig {
         properties.put(PROP_HIBERNATE_DIALECT, env.getRequiredProperty(PROP_HIBERNATE_DIALECT));
         properties.put(PROP_HIBERNATE_SHOW_SQL, env.getRequiredProperty(PROP_HIBERNATE_SHOW_SQL));
         properties.put(PROP_HIBERNATE_HBM2DDL_AUTO, env.getRequiredProperty(PROP_HIBERNATE_HBM2DDL_AUTO));
-
+        //properties.put(PROP_HIBERNATE_DDL_AUTO, env.getRequiredProperty(PROP_HIBERNATE_DDL_AUTO));
         return properties;
     }
 
