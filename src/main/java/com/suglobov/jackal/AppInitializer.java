@@ -15,8 +15,8 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{
                 DataConfig.class,
-                SalvageConfig.class,
-                JusticeConfig.class
+                SalvageConfig.class
+                //JusticeConfig.class
         };
     }
 

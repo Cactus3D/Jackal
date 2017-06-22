@@ -13,7 +13,7 @@ class MyString {
         MyString(const MyString &str);
         ~MyString();
 
-        MyString copy(MyString str);
+        MyString copy(const MyString &str);
         int length();
         int find(char ch, int start);
         int findLast(char ch);
@@ -23,6 +23,6 @@ class MyString {
         void print();
     private:
         int lengthOf(char *target);
-}
+};
 
 #endif //LAB1_1_STRING_H
