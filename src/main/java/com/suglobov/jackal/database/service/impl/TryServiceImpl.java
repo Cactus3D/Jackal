@@ -1,5 +1,6 @@
 package com.suglobov.jackal.database.service.impl;
 
+import com.suglobov.jackal.database.entity.Person;
 import com.suglobov.jackal.database.entity.Student;
 import com.suglobov.jackal.database.entity.Task;
 import com.suglobov.jackal.database.entity.Try;
@@ -46,8 +47,8 @@ public class TryServiceImpl implements TryService {
     }
 
     @Override
-    public List<Try> getFromStudent(Student student) {
-        return tryRepository.findByStudent(student);
+    public List<Try> getFromStudent(Person student) {
+        return tryRepository.findByPerson(student);
     }
 
     @Override
@@ -56,7 +57,7 @@ public class TryServiceImpl implements TryService {
     }
 
     @Override
-    public List<Try> getFromStudentWithTask(Student student, Task task) {
-        return tryRepository.findByStudentAndTask(student, task);
+    public List<Try> getFromStudentWithTask(Person student, Task task) {
+        return tryRepository.findByPersonAndTask(student, task);
     }
 }

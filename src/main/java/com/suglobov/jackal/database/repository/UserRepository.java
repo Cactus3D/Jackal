@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Cactus3D
  */
 public interface UserRepository extends JpaRepository<User, Integer> {
+    User findByLogin(String login);
 }

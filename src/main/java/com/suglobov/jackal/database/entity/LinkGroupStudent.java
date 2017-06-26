@@ -24,8 +24,8 @@ public class LinkGroupStudent {
     @JoinColumn(name = "personId")
     private Person student;
 
-    @Column(name = "course")
-    private int course;
+    @Column(name = "variant")
+    private int variant;
 
     public LinkGroupStudent() {
     }
@@ -46,11 +46,11 @@ public class LinkGroupStudent {
         this.student = student;
     }
 
-    public int getCourse() {
-        return course;
+    public int getVariant() {
+        return variant;
     }
 
-    public void setCourse(int course) {
-        this.course = course;
+    public void setVariant(int variant) {
+        this.variant = variant;
     }
 }

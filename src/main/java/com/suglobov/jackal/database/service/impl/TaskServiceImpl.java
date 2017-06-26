@@ -1,5 +1,8 @@
 package com.suglobov.jackal.database.service.impl;
 
+import com.suglobov.jackal.database.entity.Disciple;
+import com.suglobov.jackal.database.entity.Group;
+import com.suglobov.jackal.database.entity.Person;
 import com.suglobov.jackal.database.entity.Task;
 import com.suglobov.jackal.database.repository.TaskRepository;
 import com.suglobov.jackal.database.service.TaskService;
@@ -46,5 +49,20 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Task getByName(String name) {
         return taskRepository.findByName(name);
+    }
+
+    @Override
+    public List<Task> getByDisciple(Disciple disciple) {
+        return taskRepository.findByDisciple(disciple);
+    }
+
+    @Override
+    public List<Task> getByAuthor(Person person) {
+        return taskRepository.findByAuthor(person);
+    }
+
+    @Override
+    public List<Task> getByGroup(Group group) {
+        return null;
     }
 }

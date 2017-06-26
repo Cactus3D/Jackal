@@ -1,5 +1,6 @@
 package com.suglobov.jackal.database.service;
 
+import com.suglobov.jackal.database.entity.Person;
 import com.suglobov.jackal.database.entity.Student;
 import com.suglobov.jackal.database.entity.Task;
 import com.suglobov.jackal.database.entity.Try;
@@ -20,9 +21,9 @@ public interface TryService {
 
     List<Try> getAll();
 
-    List<Try> getFromStudent(Student student);
+    List<Try> getFromStudent(Person person);
 
     List<Try> getWithTask(Task task);
 
-    List<Try> getFromStudentWithTask(Student student, Task task);
+    List<Try> getFromStudentWithTask(Person person, Task task);
 }

@@ -1,5 +1,8 @@
 package com.suglobov.jackal.database.service;
 
+import com.suglobov.jackal.database.entity.Disciple;
+import com.suglobov.jackal.database.entity.Group;
+import com.suglobov.jackal.database.entity.Person;
 import com.suglobov.jackal.database.entity.Task;
 
 import java.util.List;
@@ -19,4 +22,10 @@ public interface TaskService {
     Task getById(int id);
 
     Task getByName(String name);
+
+    List<Task> getByDisciple(Disciple disciple);
+
+    List<Task> getByAuthor(Person person);
+
+    List<Task> getByGroup(Group group);
 }
