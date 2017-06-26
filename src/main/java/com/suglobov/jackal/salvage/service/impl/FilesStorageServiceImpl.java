@@ -33,6 +33,11 @@ public class FilesStorageServiceImpl implements FilesStorageService {
     }
 
     @Override
+    public void transferOutputFiles(int taskId, int tryId, int variantId) {
+
+    }
+
+    @Override
     public void saveFiles(File[] files, int id) {
 
     }

@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by cactu on 31.03.2017.
  */
 @Entity
-@Table(name = "groups")
+@Table(name = "group")
 public class Group {
 
     @Id
@@ -15,6 +15,9 @@ public class Group {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "course")
+    private int course;
 
     /*@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Student> students;*/
@@ -38,7 +41,15 @@ public class Group {
         this.name = name;
     }
 
-//    public Set<Student> getStudents() {
+    public int getCourse() {
+        return course;
+    }
+
+    public void setCourse(int course) {
+        this.course = course;
+    }
+
+    //    public Set<Student> getStudents() {
 //        return students;
 //    }
 //

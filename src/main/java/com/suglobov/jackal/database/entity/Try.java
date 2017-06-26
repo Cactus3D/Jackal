@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by cactu on 31.03.2017.
  */
 @Entity
-@Table(name = "tries")
+@Table(name = "try")
 public class Try {
 
     @Id
@@ -17,19 +17,22 @@ public class Try {
     @Column(name = "report")
     private String report;
 
-    @Column(name = "variant")
+    @Column(name = "variantid")
     private int variant;
 
     @Column(name = "date")
     private Date date;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id")
-    private Student student;
+    @JoinColumn(name = "personid")
+    private Person person;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "task_id")
     private Task task;
+
+    @Column(name = "code")
+    private String code;
 
     public Try() {
     }
@@ -66,20 +69,28 @@ public class Try {
         this.date = date;
     }
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
     public Task getTask() {
         return task;
     }
 
     public void setTask(Task task) {
         this.task = task;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Override

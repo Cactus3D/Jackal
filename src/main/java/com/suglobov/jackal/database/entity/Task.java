@@ -1,12 +1,13 @@
 package com.suglobov.jackal.database.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by cactu on 31.03.2017.
  */
 @Entity
-@Table(name = "tasks")
+@Table(name = "task")
 public class Task {
 
     @Id
@@ -17,8 +18,22 @@ public class Task {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_id")
+    @JoinColumn(name = "discipleId")
     private Task task;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "discipleId")
+    private Disciple disciple;
+
+    @Column(name = "variantscount")
+    private int variantsCount;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author")
+    private Person author;
+
+    @Column(name = "date")
+    private Date date;
 
     public Task() {
     }
@@ -45,6 +60,38 @@ public class Task {
 
     public void setTask(Task task) {
         this.task = task;
+    }
+
+    public Disciple getDisciple() {
+        return disciple;
+    }
+
+    public void setDisciple(Disciple disciple) {
+        this.disciple = disciple;
+    }
+
+    public int getVariantsCount() {
+        return variantsCount;
+    }
+
+    public void setVariantsCount(int variantsCount) {
+        this.variantsCount = variantsCount;
+    }
+
+    public Person getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Person author) {
+        this.author = author;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
