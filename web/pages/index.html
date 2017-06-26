@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр задач</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../resources/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="../resources/materialize/css/style.css" rel="stylesheet">
+</head>
+<body>
+<ul id="teacherDropdownMenu" class="dropdown-content">
+    <li><a href="#!" class="dropdown-menu-item">Назначение групп</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" class="dropdown-menu-item">Назначение задач</a></li>
+</ul>
+<nav class="amber darken-2">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Jackal</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="dropdown-button" href="#" data-activates="teacherDropdownMenu">Управление группами<i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="#">Добавление задачи</a></li>
+            <li><a href="#">Просмотр результатов</a></li>
+            <li><a href="#">Вход</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li>
+                <div class="userView">
+                    <div class="background" style="background: grey;">
+
+                    </div>
+                    <a href="#!user"><img src="image/bonch_logo.png" width="200"></a>
+                    <a href="#"><span
+                            class="white-text name">Система автоматизации проверки лабораторный работ "Jackal"</span></a>
+                    <a href="#!email"><span class="white-text email">Автор: Владислав Суглобов</span></a>
+                </div>
+            </li>
+            <li><a href="#">Вход</a></li>
+            <li><a href="#">Просмотр результатов</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h2 class="center">Задания</h2>
+        </div>
+        <div class="col s12">
+            <nav class="amber darken-2">
+                <div class="nav-wrapper">
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="col s12">
+            <table class="highlight">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Задача</th>
+                    <th>Студент</th>
+                    <th style="width: 10%;">Кол-во попыток</th>
+                    <th style="width: 10%;">Код</th>
+                    <th style="width: 5%;"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr data-target="modalModal">
+                    <td data-target="modalModal">1</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td>
+                        <input type="checkbox" id="test6"/>
+                        <label for="test6"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-target="modalModal">2</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td>
+                        <input type="checkbox" id="test7"/>
+                        <label for="test7"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-target="modalModal">3</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td data-target="modalModal">Eclair</td>
+                    <td>
+                        <input type="checkbox" id="test8"/>
+                        <label for="test8"></label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="center pagination-wrapper">
+        <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="modalModal" class="modal  modal-fixed-footer">
+    <div class="modal-content">
+        <div class="headers">
+            <h4>Этап: Статический анализ</h4>
+            <h5>Статус: Выполнено</h5>
+            <h5>Результат:</h5>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+        </p>
+        <div class="headers">
+            <h4>Этап: Компиляция</h4>
+            <h5>Статус: Выполнено</h5>
+            <h5>Результат:</h5>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+        </p>
+    </div>
+    <div class="modal-footer" style="text-align: center;">
+        <div class="centered">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Проверить результат</a>
+        </div>
+        <div class="centered">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Отправить новую задачу</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="materialize/js/jquery-3-4-10.js" rel="script"></script>
+<script src="materialize/js/materialize.min.js" rel="script"></script>
+<script src="materialize/js/init.js" rel="script"></script>
+<script src="materialize/js/custom.js" rel="script"></script>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузка задачи</title>
+    <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link href="../resources/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="../resources/materialize/css/style.css" rel="stylesheet">
+</head>
+<body>
+<ul id="teacherDropdownMenu" class="dropdown-content">
+    <li><a href="#!" class="dropdown-menu-item">Назначение групп</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" class="dropdown-menu-item">Назначение задач</a></li>
+</ul>
+<nav class="amber darken-2">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Jackal</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="dropdown-button" href="#" data-activates="teacherDropdownMenu">Управление группами<i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="#">Добавление задачи</a></li>
+            <li><a href="#">Просмотр результатов</a></li>
+            <li><a href="#">Вход</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li>
+                <div class="userView">
+                    <div class="background" style="background: grey;">
+
+                    </div>
+                    <a href="#!user"><img src="image/bonch_logo.png" width="200"></a>
+                    <a href="#"><span
+                            class="white-text name">Система автоматизации проверки лабораторный работ "Jackal"</span></a>
+                    <a href="#!email"><span class="white-text email">Автор: Владислав Суглобов</span></a>
+                </div>
+            </li>
+            <li><a href="#">Вход</a></li>
+            <li><a href="#">Просмотр результатов</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <h2 class="center">Добавить задачу</h2>
+        <form class="col s12">
+            <div class="row">
+                <!-- Вариант с селектом с лейблом -->
+                <div class="input-field col s12 m6 hide-on-small-only">
+                    <label for="task" class="black-text dropdown-label">Выберите задание:</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select id="task" name="task">
+                        <option value="" disabled selected>Выберите задание</option>
+                        <option value="1">Задание 1</option>
+                        <option value="2">Задание 2</option>
+                        <option value="3">Задание 3</option>
+                    </select>
+                </div>
+                <!-- Конец варианта селекта с лейблом -->
+
+                <!-- Вариант с селектом по средине -->
+                <!--<div class="input-field col s12 m6 push-m2 l4 push-l4">-->
+                <!--<select id="task" name="task">-->
+                <!--<option value="" disabled selected>Выберите задание</option>-->
+                <!--<option value="1">Задание 1</option>-->
+                <!--<option value="2">Задание 2</option>-->
+                <!--<option value="3">Задание 3</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <!-- Конец варианта селекта по средине -->
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <label for="variant" class="black-text dropdown-label hide-on-small-only">Выберите вариант:</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <select id="variant" name="variant">
+                        <option value="" disabled selected>Выберите предмет</option>
+                        <option value="1">Вариант 1</option>
+                        <option value="2">Вариант 2</option>
+                        <option value="3">Вариант 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card grey">
+                        <div class="card-content white-text">
+                            <h4 class="amber-text text-darken-2 center">Задание лабораторной работы</h4>
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                            <!-- Для примера поддержки тегов в карточке-->
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Item Name</th>
+                                    <th>Item Price</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>Alvin</td>
+                                    <td>Eclair</td>
+                                    <td>$0.87</td>
+                                </tr>
+                                <tr>
+                                    <td>Alan</td>
+                                    <td>Jellybean</td>
+                                    <td>$3.76</td>
+                                </tr>
+                                <tr>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop</td>
+                                    <td>$7.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="file-field input-field col s12 m6 push-m2 l4 push-l4">
+                    <div class="btn amber darken-2">
+                        <span>Файлы</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Загрузите файлы">
+                    </div>
+                </div>
+            </div>
+            <div class="input-field center">
+                <a href="#doneModal">
+                    <input class="btn  waves-effect amber darken-2" type="submit" name="action" value="Отправить">
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="doneModal" class="modal">
+    <div class="modal-content">
+        <h3 class="center-align">Ваша задача успешно добавлена!</h3>
+        <h4 class="center-align">Номер: <span id="tryNumber">#id</span></h4>
+    </div>
+    <div class="modal-footer" style="text-align: center;">
+        <div class="centered">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Проверить результат</a>
+        </div>
+        <div class="centered">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Отправить новую задачу</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="materialize/js/jquery-3-4-10.js" rel="script"></script>
+<script src="materialize/js/materialize.min.js" rel="script"></script>
+<script src="materialize/js/init.js" rel="script"></script>
+<script src="materialize/js/custom.js" rel="script"></script>
+</html>
